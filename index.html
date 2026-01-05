@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Dynamic Load Management — 50 kW Granularity</title>
+  styles.css
+  <meta name="description" content="Interactive animation of dynamic load management with 50 kW power modules." />
+</head>
+<body>
+  <header class="hero container">
+    <h1>Dynamic load management — <span class="accent">50&nbsp;kW</span> granularity</h1>
+    <p class="sub">
+      Watch power modules re‑allocate across vehicles in real time for the most efficient use of site capacity.
+    </p>
+    <div class="controls">
+      <button id="addEv" class="btn">+ Add EV</button>
+      <button id="removeEv" class="btn" aria-disabled="true">– Remove EV</button>
+      <button id="randomize" class="btn btn-outline">Randomize Requests</button>
+      <label class="toggle">
+        <input type="checkbox" id="peakShave" />
+        <span>Peak‑shave (limit site to 300&nbsp;kW)</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Animation canvas -->
+    <section class="stage" id="stage" aria-label="Dynamic load management animation">
+      <!-- Left: Power pool -->
+      <aside class="pool">
+        <h2 class="pool-title">
+          Power Pool
+          <small id="poolKw">400 kW total</small>
+        </h2>
+        <div id="moduleStack" class="module-stack" aria-live="polite" aria-atomic="true"></div>
+        <div class="legend">
+          <span class="chip module-chip"></span>
+          <span>= 50 kW module</span>
+        </div>
+      </aside>
+
+      <!-- Right: Stalls -->
+      <div class="stalls" id="stalls" role="list" aria-label="Charging stalls">
+        <!-- JS will populate stall cards -->
+      </div>
+
+      <!-- Absolutely-positioned token layer for animated modules -->
+      <div class="tokens-layer" id="tokensLayer" aria-hidden="true"></div>
+    </section>
+
+    <!-- Table summary -->
+    <section class="summary">
+      <h3>Live allocation</h3>
+      <table class="grid" aria-describedby="tableHelp">
+        <thead>
+          <tr>
+            <th>Stall</th>
+            <th>Request</th>
+            <th>Allocated</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody id="summaryBody"></tbody>
+      </table>
+      <p id="tableHelp" class="help">
+        Allocation happens in 50&nbsp;kW steps. Toggle Peak‑shave to see how the system redistributes power.
+      </p>
+    </section>
+  </main>
+
+  <footer class="container foot">
+    <p>
+      Built for demo purposes — clean-room recreation of the DLM animation pattern you liked.
+      Respects reduced‑motion and pauses when off‑screen.
+    </p>
+  </footer>
+
+  <script src="app</body>
+</html>
