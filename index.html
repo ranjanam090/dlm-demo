@@ -2,21 +2,30 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Character encoding -->
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+
+  <!-- Mobile-friendly viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- Page title -->
   <title>Dynamic Load Management — 50 kW Granularity</title>
+
+  <!-- ✅ Correct CSS link: relative path, no leading slash -->
   styles.css
+
+  <!-- SEO description -->
   <meta name="description" content="Interactive animation of dynamic load management with 50 kW power modules." />
 </head>
 <body>
+  <!-- Header / Hero -->
   <header class="hero container">
     <h1>Dynamic load management — <span class="accent">50&nbsp;kW</span> granularity</h1>
     <p class="sub">
       Watch power modules re‑allocate across vehicles in real time for the most efficient use of site capacity.
     </p>
+
+    <!-- Controls -->
     <div class="controls">
       <button id="addEv" class="btn">+ Add EV</button>
       <button id="removeEv" class="btn" aria-disabled="true">– Remove EV</button>
@@ -28,32 +37,37 @@
     </div>
   </header>
 
+  <!-- Main content -->
   <main class="container">
-    <!-- Animation canvas -->
+    <!-- Animation stage -->
     <section class="stage" id="stage" aria-label="Dynamic load management animation">
-      <!-- Left: Power pool -->
+      <!-- Power pool -->
       <aside class="pool">
         <h2 class="pool-title">
           Power Pool
           <small id="poolKw">400 kW total</small>
         </h2>
+
+        <!-- Module stack (left column) -->
         <div id="moduleStack" class="module-stack" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- Legend -->
         <div class="legend">
           <span class="chip module-chip"></span>
           <span>= 50 kW module</span>
         </div>
       </aside>
 
-      <!-- Right: Stalls -->
+      <!-- Stalls (right column) -->
       <div class="stalls" id="stalls" role="list" aria-label="Charging stalls">
-        <!-- JS will populate stall cards -->
+        <!-- JS populates stall cards -->
       </div>
 
-      <!-- Absolutely-positioned token layer for animated modules -->
+      <!-- Floating animation tokens layer -->
       <div class="tokens-layer" id="tokensLayer" aria-hidden="true"></div>
     </section>
 
-    <!-- Table summary -->
+    <!-- Summary table -->
     <section class="summary">
       <h3>Live allocation</h3>
       <table class="grid" aria-describedby="tableHelp">
@@ -73,12 +87,14 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="container foot">
     <p>
-      Built for demo purposes — clean-room recreation of the DLM animation pattern you liked.
-      Respects reduced‑motion and pauses when off‑screen.
+      Clean‑room demo of DLM with 50&nbsp;kW steps. Respects reduced‑motion settings and pauses when off‑screen.
     </p>
   </footer>
 
-  <script src="app</body>
+  <!-- ✅ Correct JS link: relative path, loaded with 'defer' so DOM is ready -->
+  app.js</script>
+</body>
 </html>
