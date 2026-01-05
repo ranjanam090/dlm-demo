@@ -5,12 +5,12 @@
   --card:#0f161e;
   --text:#e8f0f7;
   --muted:#9fb2c3;
-  --accent:#00c2b8; /* swap for brand primary */
-  --accent-2:#7af0d8; /* optional gradient accent */
+  --accent:#00c2b8;
+  --accent-2:#7af0d8;
   --good:#7ee787;
   --warn:#ffb454;
   --danger:#ff6b6b;
-  --token:#19d3c5; /* module color */
+  --token:#19d3c5;
   --token-shadow: rgba(26, 211, 197, .35);
   --border:rgba(255,255,255,.06);
   --grid: rgba(255,255,255,.08);
@@ -23,7 +23,6 @@ body{
   margin:0; background:linear-gradient(180deg, #0b0f14, #0a1118 60%, #0b0f14);
   color:var(--text); font:500 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
 }
-
 .container{ max-width:1120px; margin:0 auto; padding:24px; }
 
 .hero{ text-align:center; padding-top:28px; padding-bottom:6px; }
@@ -70,16 +69,10 @@ h1 .accent{ color:var(--accent); }
 
 .meta{ display:flex; justify-content:space-between; gap:10px; color:var(--muted); font-size:13px; margin-top:8px; }
 
-.priority{
-  display:flex; align-items:center; gap:6px; color:var(--muted); margin-top:8px;
-}
-.priority input[type="range"]{
-  width:100%; accent-color: var(--accent);
-}
+.priority{ display:flex; align-items:center; gap:6px; color:var(--muted); margin-top:8px; }
+.priority input[type="range"]{ width:100%; accent-color: var(--accent); }
 
-.controls-row{
-  display:flex; gap:8px; margin-top:10px;
-}
+.controls-row{ display:flex; gap:8px; margin-top:10px; }
 .controls-row .btn{ padding:8px 10px; font-weight:600; }
 
 .tokens-layer{ position:absolute; inset:0; pointer-events:none; overflow:visible; }
@@ -99,7 +92,7 @@ h1 .accent{ color:var(--accent); }
 
 .foot{ color:var(--muted); text-align:center; border-top:1px solid var(--border); margin-top:30px; padding-top:16px; }
 
-/* Accessibility: reduce motion */
+/* Accessibility: reduce motion (MDN & W3C C39) */
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration: 0s !important; transition-duration: 0s !important; }
 }
